@@ -1,0 +1,45 @@
+{{ define "main" }}
+  {{ partial "breadcrumbs.html" . }}
+  <article>
+    <div class="detail-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+      <div class="detail-meta">
+        {{ with .Params.provider }}<dl><dt>Провайдер</dt><dd>{{ . }}</dd></dl>{{ end }}
+        {{ with .Params.item_type }}<dl><dt>Тип</dt><dd>{{ . }}</dd></dl>{{ end }}
+        {{ with .Params.pricing }}{{ with .from }}<dl><dt>Цена от</dt><dd>{{ . }}</dd></dl>{{ end }}{{ end }}
+      </div>
+    </div>
+
+    {{ with .Params.features }}
+    <h2>Ключевые особенности</h2>
+    <ul class="features-list">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    {{ end }}
+
+    {{ with .Params.pricing }}{{ with .tiers }}
+    <h2>Тарифы</h2>
+    <table class="pricing-table">
+      <thead><tr><th>План</th><th>Цена</th></tr></thead>
+      <tbody>
+        {{ range . }}<tr><td>{{ .name }}</td><td>{{ .price }}</td></tr>{{ end }}
+      </tbody>
+    </table>
+    {{ end }}{{ end }}
+
+    {{ with .Params.tags }}
+    <div class="tags" style="margin-top: 1rem;">
+      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+
+    <div class="content-body">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.website }}
+    <a href="{{ . }}" target="_blank" rel="noopener" class="external-link">Официальный сайт →</a>
+    {{ end }}
+  </article>
+{{ end }}

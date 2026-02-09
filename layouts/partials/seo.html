@@ -1,0 +1,66 @@
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Site.Params.ogImage }}<meta property="og:image" content="{{ . }}">{{ end }}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<!-- JSON-LD -->
+{{ if .IsPage }}
+{{ if eq .Section "models" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "brand": { "@type": "Organization", "name": "{{ .Params.provider }}" },
+  "url": "{{ .Permalink }}"
+  {{ with .Params.pricing }}{{ with .from }},"offers": { "@type": "Offer", "price": "{{ . }}", "priceCurrency": "USD" }{{ end }}{{ end }}
+}
+</script>
+{{ else if eq .Section "tools" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "applicationCategory": "DeveloperApplication",
+  "url": "{{ .Permalink }}"
+  {{ with .Params.pricing }}{{ with .from }},"offers": { "@type": "Offer", "price": "{{ . }}", "priceCurrency": "USD" }{{ end }}{{ end }}
+}
+</script>
+{{ else if eq .Section "skills" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
+}
+</script>
+{{ else if eq .Section "mcp" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "applicationCategory": "DeveloperApplication",
+  "url": "{{ .Permalink }}"
+}
+</script>
+{{ end }}
+{{ end }}

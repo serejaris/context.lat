@@ -1,0 +1,17 @@
+<article class="card">
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Description }}</p>
+  <div class="card-meta">
+    {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
+    {{ with .Params.pricing }}{{ with .from }}<span>{{ . }}</span>{{ end }}{{ end }}
+    {{ with .Params.item_type }}<span>{{ . }}</span>{{ end }}
+    {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+    {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
+    {{ with .Params.protocol }}<span>{{ . }}</span>{{ end }}
+  </div>
+  {{ with .Params.tags }}
+  <div class="tags">
+    {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+  </div>
+  {{ end }}
+</article>

@@ -1,0 +1,26 @@
+baseURL = "https://context.lat/"
+languageCode = "ru"
+title = "context.lat — Каталог AI-инструментов"
+
+enableRobotsTXT = true
+enableGitInfo = false
+
+[outputs]
+  home = []
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  tag = "tags"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  description = "Справочник AI-инструментов для вайбкодеров: модели, IDE, скиллы, MCP серверы"
+  author = "context.lat"
+  ogImage = ""

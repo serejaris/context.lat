@@ -1,0 +1,9 @@
+<nav class="breadcrumbs">
+  <a href="/">Главная</a>
+  <span class="separator">/</span>
+  {{ if .Parent }}
+    <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
+    <span class="separator">/</span>
+  {{ end }}
+  <span>{{ .Title }}</span>
+</nav>

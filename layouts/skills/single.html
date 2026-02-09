@@ -1,0 +1,23 @@
+{{ define "main" }}
+  {{ partial "breadcrumbs.html" . }}
+  <article>
+    <div class="detail-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+      <div class="detail-meta">
+        {{ with .Params.category }}<dl><dt>Категория</dt><dd>{{ . }}</dd></dl>{{ end }}
+        {{ with .Params.difficulty }}<dl><dt>Сложность</dt><dd>{{ . }}</dd></dl>{{ end }}
+      </div>
+    </div>
+
+    {{ with .Params.tags }}
+    <div class="tags" style="margin-top: 1rem;">
+      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+
+    <div class="content-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}
