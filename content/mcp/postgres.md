@@ -5,7 +5,6 @@ date: 2026-02-09
 provider: "Community"
 protocol: "MCP"
 website: "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
-tags: ["database", "sql", "postgres"]
 features:
   - "Выполнение SQL-запросов"
   - "Анализ схемы базы данных"

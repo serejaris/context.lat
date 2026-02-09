@@ -5,7 +5,6 @@ date: 2026-02-09
 provider: "Anthropic"
 protocol: "MCP"
 website: "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
-tags: ["filesystem", "files", "local"]
 features:
   - "Чтение и запись файлов"
   - "Создание директорий"

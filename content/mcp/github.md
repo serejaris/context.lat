@@ -5,7 +5,6 @@ date: 2026-02-09
 provider: "GitHub / Anthropic"
 protocol: "MCP"
 website: "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
-tags: ["github", "git", "issues", "pr"]
 features:
   - "Создание и поиск issues"
   - "Работа с Pull Requests"

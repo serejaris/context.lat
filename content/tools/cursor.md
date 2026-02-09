@@ -15,7 +15,6 @@ pricing:
     - name: "Ultra"
       price: "$200/мес"
 website: "https://cursor.com/"
-tags: ["ide", "vscode", "popular", "beginner-friendly"]
 features:
   - "Fork VS Code — привычный интерфейс"
   - "Composer для multi-file editing"

@@ -13,7 +13,6 @@ pricing:
     - name: "Core"
       price: "$20/мес"
 website: "https://replit.com/"
-tags: ["cloud-ide", "fullstack", "deploy", "beginner-friendly"]
 features:
   - "Всё в браузере"
   - "AI Agent для генерации приложений"

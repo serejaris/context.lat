@@ -5,7 +5,6 @@ date: 2026-02-09
 provider: "Microsoft"
 protocol: "MCP"
 website: "https://github.com/microsoft/playwright-mcp"
-tags: ["browser", "testing", "automation", "scraping"]
 features:
   - "Навигация по страницам"
   - "Клики, ввод текста, формы"

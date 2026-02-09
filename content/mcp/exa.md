@@ -5,7 +5,6 @@ date: 2026-02-09
 provider: "Exa"
 protocol: "MCP"
 website: "https://github.com/exa-labs/exa-mcp-server"
-tags: ["search", "web", "research"]
 features:
   - "Семантический поиск"
   - "Поиск кода и документации"

@@ -13,7 +13,6 @@ pricing:
     - name: "Pro (AI)"
       price: "$20/мес"
 website: "https://zed.dev/"
-tags: ["ide", "rust", "fast", "open-source"]
 features:
   - "Написан на Rust — молниеносный"
   - "Open-source"

@@ -15,7 +15,6 @@ pricing:
     - name: "Team"
       price: "$30/мес"
 website: "https://bolt.new/"
-tags: ["no-code", "web", "fullstack", "beginner-friendly"]
 features:
   - "Генерация приложений по описанию"
   - "Работает в браузере"

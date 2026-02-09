@@ -15,7 +15,6 @@ pricing:
     - name: "API"
       price: "По usage"
 website: "https://docs.anthropic.com/en/docs/claude-code"
-tags: ["cli", "agentic", "terminal", "pro-tool"]
 features:
   - "Работает в терминале — никакой IDE"
   - "Автономное выполнение задач"

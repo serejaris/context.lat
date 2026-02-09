@@ -15,7 +15,6 @@ pricing:
     - name: "Ultra"
       price: "$60/мес"
 website: "https://windsurf.com/"
-tags: ["ide", "flows", "affordable"]
 features:
   - "Cascade — агентный AI ассистент"
   - "Flows — контекстуальное понимание"

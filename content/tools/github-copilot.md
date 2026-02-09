@@ -15,7 +15,6 @@ pricing:
     - name: "Pro+"
       price: "$39/мес"
 website: "https://github.com/features/copilot"
-tags: ["plugin", "github", "vscode", "jetbrains"]
 features:
   - "Работает в любой IDE (VS Code, JetBrains, Neovim)"
   - "Copilot Chat"

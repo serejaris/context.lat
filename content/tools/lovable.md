@@ -15,7 +15,6 @@ pricing:
     - name: "Launch"
       price: "$50/мес"
 website: "https://lovable.dev/"
-tags: ["no-code", "visual", "fullstack", "beginner-friendly"]
 features:
   - "Визуальный редактор + код"
   - "Генерация full-stack приложений"
