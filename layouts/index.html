@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <div class="home-hero">
+    <h1>context.lat</h1>
+    <p class="home-subtitle">Справочник AI-инструментов для вайбкодеров</p>
+  </div>
+
+  {{ $latest := index (where .Site.RegularPages "Draft" false).ByDate.Reverse 0 }}
+  {{ with $latest }}
+  <a href="{{ .RelPermalink }}" class="pulse">
+    <div class="pulse-label">Последнее обновление</div>
+    <div class="pulse-title">{{ .Title }}</div>
+    <div class="pulse-desc">{{ .Description }}</div>
+    <div class="pulse-meta">
+      <span>{{ .Section }}</span>
+      {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}
+    </div>
+  </a>
+  {{ end }}
+
+  <div class="home-grid">
+    {{ $models := where .Site.RegularPages "Section" "models" }}
+    <a href="/models/" class="home-card">
+      <div class="home-card-title">Модели</div>
+      <div class="home-card-count">{{ len $models }} модели</div>
+      <div class="home-card-desc">Claude, GPT, Gemini, DeepSeek — сравнение возможностей и цен</div>
+    </a>
+    {{ $tools := where .Site.RegularPages "Section" "tools" }}
+    <a href="/tools/" class="home-card">
+      <div class="home-card-title">Инструменты</div>
+      <div class="home-card-count">{{ len $tools }} инструментов</div>
+      <div class="home-card-desc">IDE и платформы для вайбкодинга: Cursor, Claude Code, Bolt, Lovable</div>
+    </a>
+    {{ $skills := where .Site.RegularPages "Section" "skills" }}
+    <a href="/skills/" class="home-card">
+      <div class="home-card-title">Скиллы</div>
+      <div class="home-card-count">{{ len $skills }} скиллов</div>
+      <div class="home-card-desc">Промпт-инжиниринг, управление контекстом, AI pair programming</div>
+    </a>
+    {{ $mcp := where .Site.RegularPages "Section" "mcp" }}
+    <a href="/mcp/" class="home-card">
+      <div class="home-card-title">MCP</div>
+      <div class="home-card-count">{{ len $mcp }} серверов</div>
+      <div class="home-card-desc">Model Context Protocol серверы: GitHub, Playwright, PostgreSQL</div>
+    </a>
+  </div>
+{{ end }}

@@ -6,7 +6,7 @@ enableRobotsTXT = true
 enableGitInfo = false
 
 [outputs]
-  home = []
+  home = ["HTML"]
 
 [markup]
   [markup.goldmark]
