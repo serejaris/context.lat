@@ -21,7 +21,7 @@ enableGitInfo = false
   priority = 0.5
 
 [params]
-  description = "Справочник AI-инструментов для вайбкодеров: модели, IDE, скиллы, MCP серверы"
+  description = "Справочник AI-инструментов для вайбкодеров и их ии-агентов: модели, IDE, skills, статьи, MCP серверы"
   author = "context.lat"
   ogImage = ""
   gitRepo = "https://github.com/serejaris/context.lat"

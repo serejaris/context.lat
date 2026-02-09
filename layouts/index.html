@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="home-hero">
     <h1>context.lat</h1>
-    <p class="home-subtitle">Справочник AI-инструментов для вайбкодеров</p>
+    <p class="home-subtitle">Справочник AI-инструментов для вайбкодеров и их ии-агентов</p>
   </div>
 
   {{ $latest := index (where .Site.RegularPages "Draft" false).ByDate.Reverse 0 }}
@@ -33,8 +33,14 @@
     </a>
     {{ $skills := where .Site.RegularPages "Section" "skills" }}
     <a href="/skills/" class="home-card">
-      <div class="home-card-title">Скиллы</div>
-      <div class="home-card-count">{{ len $skills }} скиллов</div>
+      <div class="home-card-title">Skills</div>
+      <div class="home-card-count">{{ len $skills }} {{ cond (ge (len $skills) 5) "скиллов" (cond (eq (len $skills) 1) "скилл" "скилла") }}</div>
+      <div class="home-card-desc">Кастомные навыки для Claude Code и других AI-агентов</div>
+    </a>
+    {{ $articles := where .Site.RegularPages "Section" "articles" }}
+    <a href="/articles/" class="home-card">
+      <div class="home-card-title">Статьи</div>
+      <div class="home-card-count">{{ len $articles }} {{ cond (ge (len $articles) 5) "статей" (cond (eq (len $articles) 1) "статья" "статьи") }}</div>
       <div class="home-card-desc">Промпт-инжиниринг, управление контекстом, AI pair programming</div>
     </a>
     {{ $mcp := where .Site.RegularPages "Section" "mcp" }}
