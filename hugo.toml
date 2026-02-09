@@ -24,3 +24,4 @@ enableGitInfo = false
   description = "Справочник AI-инструментов для вайбкодеров: модели, IDE, скиллы, MCP серверы"
   author = "context.lat"
   ogImage = ""
+  gitRepo = "https://github.com/serejaris/context.lat"

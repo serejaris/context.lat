@@ -30,5 +30,9 @@
     {{ with .Params.website }}
     <a href="{{ . }}" target="_blank" rel="noopener" class="external-link">Документация →</a>
     {{ end }}
+
+    {{ with .Site.Params.gitRepo }}
+    <a href="{{ . }}/edit/main/content/{{ $.File.Path }}" target="_blank" rel="noopener" class="edit-link">Редактировать на GitHub →</a>
+    {{ end }}
   </article>
 {{ end }}
