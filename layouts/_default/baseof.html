@@ -70,21 +70,22 @@
     }
 
     .card {
+      display: block;
       border: 1px solid #222;
       padding: 1.25rem;
       border-radius: 4px;
       transition: border-color 0.2s;
+      color: inherit;
+      text-decoration: none;
     }
 
     .card:hover {
       border-color: #4A9EFF;
+      text-decoration: none;
     }
 
     .card h3 {
       margin-bottom: 0.5rem;
-    }
-
-    .card h3 a {
       color: #ccc;
     }
 
@@ -326,7 +327,7 @@
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer">
-      context.lat — справочник AI-инструментов для <a href="https://t.me/vibecod3rs">вайбкодеров</a>
+      context.lat — для <a href="https://t.me/vibecod3rs">вайбкодеров</a> и их агентов
     </footer>
   </div>
 </body>
