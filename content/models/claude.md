@@ -15,7 +15,6 @@ pricing:
     - name: "API (Opus)"
       price: "$15/1M input"
 website: "https://claude.ai/"
-tags: ["coding", "reasoning", "agentic"]
 features:
   - "Контекст 1M токенов"
   - "SWE-bench 80.9%"

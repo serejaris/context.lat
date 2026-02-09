@@ -7,7 +7,6 @@ AI tools catalog built with Hugo. Dark monospace theme.
 - skills/ — Claude Code skills (кастомные навыки)
 - articles/ — статьи и гайды (бывший раздел "скиллы")
 - layouts/ — Hugo templates
-- static/index.html — Standalone home page
 
 ## Dev
 - `hugo server` — dev preview

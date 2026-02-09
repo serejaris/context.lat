@@ -5,25 +5,14 @@
       <h1>{{ .Title }}</h1>
       {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
       <div class="detail-meta">
-        {{ with .Params.provider }}<dl><dt>Провайдер</dt><dd>{{ . }}</dd></dl>{{ end }}
-        {{ with .Params.protocol }}<dl><dt>Протокол</dt><dd>{{ . }}</dd></dl>{{ end }}
+        {{ with .Params.category }}<dl><dt>Категория</dt><dd>{{ . }}</dd></dl>{{ end }}
+        {{ with .Params.difficulty }}<dl><dt>Сложность</dt><dd>{{ . }}</dd></dl>{{ end }}
       </div>
     </div>
-
-    {{ with .Params.features }}
-    <h2>Возможности</h2>
-    <ul class="features-list">
-      {{ range . }}<li>{{ . }}</li>{{ end }}
-    </ul>
-    {{ end }}
 
     <div class="content-body">
       {{ .Content }}
     </div>
-
-    {{ with .Params.website }}
-    <a href="{{ . }}" target="_blank" rel="noopener" class="external-link">Документация →</a>
-    {{ end }}
 
     {{ with .Site.Params.gitRepo }}
     <a href="{{ . }}/edit/main/content/{{ $.File.Path }}" target="_blank" rel="noopener" class="edit-link">Редактировать на GitHub →</a>

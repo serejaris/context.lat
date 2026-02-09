@@ -4,7 +4,6 @@ description: "Как эффективно использовать контек�
 date: 2026-02-09
 category: "Продвинутый"
 difficulty: "Средний"
-tags: ["context", "claude-md", "rules", "memory"]
 weight: 2
 ---
 

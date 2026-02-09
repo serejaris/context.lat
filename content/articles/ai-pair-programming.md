@@ -4,7 +4,6 @@ description: "Как эффективно работать в паре с AI. В
 date: 2026-02-09
 category: "Методология"
 difficulty: "Средний"
-tags: ["pair-programming", "vibecoding", "workflow"]
 weight: 3
 ---
 

@@ -17,7 +17,6 @@ pricing:
     - name: "API (GPT-4o)"
       price: "$2.50/1M input"
 website: "https://chat.openai.com/"
-tags: ["coding", "multimodal", "ecosystem"]
 features:
   - "Бесплатный тариф"
   - "Мультимодальность (текст, изображения, аудио)"

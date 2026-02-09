@@ -9,7 +9,6 @@ pricing:
   from: ""
   tiers: []
 website: ""
-tags: []
 features: []
 weight: 10
 draft: true

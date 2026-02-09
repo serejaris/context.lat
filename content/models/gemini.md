@@ -15,7 +15,6 @@ pricing:
     - name: "API (2.5 Flash)"
       price: "$0.15/1M input"
 website: "https://gemini.google.com/"
-tags: ["coding", "long-context", "affordable"]
 features:
   - "Контекст до 2M токенов"
   - "SWE-bench 77.4% (2.5 Pro)"

@@ -15,7 +15,6 @@ pricing:
     - name: "Self-hosted"
       price: "Бесплатно"
 website: "https://deepseek.com/"
-tags: ["open-source", "reasoning", "affordable"]
 features:
   - "Полностью open-source"
   - "Можно запускать локально"

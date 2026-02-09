@@ -4,7 +4,6 @@ description: "AI-генерация тестов: unit, integration, e2e. TDD с
 date: 2026-02-09
 category: "Практика"
 difficulty: "Средний → Продвинутый"
-tags: ["testing", "tdd", "quality"]
 weight: 5
 ---
 

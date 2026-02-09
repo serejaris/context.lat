@@ -28,12 +28,6 @@
     </table>
     {{ end }}{{ end }}
 
-    {{ with .Params.tags }}
-    <div class="tags" style="margin-top: 1rem;">
-      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
-    </div>
-    {{ end }}
-
     <div class="content-body">
       {{ .Content }}
     </div>

@@ -4,7 +4,6 @@ description: "Как использовать AI для поиска и испр
 date: 2026-02-09
 category: "Практика"
 difficulty: "Средний"
-tags: ["debugging", "errors", "troubleshooting"]
 weight: 4
 ---
 

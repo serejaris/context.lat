@@ -4,7 +4,6 @@ description: "Как писать промпты, которые дают нуж
 date: 2026-02-09
 category: "Базовый"
 difficulty: "Начинающий → Продвинутый"
-tags: ["prompts", "basics", "techniques"]
 weight: 1
 ---
 

@@ -13,9 +13,6 @@ enableGitInfo = false
     [markup.goldmark.renderer]
       unsafe = true
 
-[taxonomies]
-  tag = "tags"
-
 [sitemap]
   changefreq = "weekly"
   priority = 0.5

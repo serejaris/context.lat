@@ -13,7 +13,6 @@
     <div class="pulse-meta">
       <span>{{ .Section }}</span>
       {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
-      {{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}
     </div>
   </a>
   {{ end }}

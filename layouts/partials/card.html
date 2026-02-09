@@ -9,9 +9,4 @@
     {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
     {{ with .Params.protocol }}<span>{{ . }}</span>{{ end }}
   </div>
-  {{ with .Params.tags }}
-  <div class="tags">
-    {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
-  </div>
-  {{ end }}
 </a>
