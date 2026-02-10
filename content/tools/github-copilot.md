@@ -22,6 +22,8 @@ features:
   - "Coding Agent (автономный)"
   - "Глубокая интеграция с GitHub"
 weight: 4
+category: "CLI и плагины"
+category_weight: 2
 ---
 
 ## Обзор

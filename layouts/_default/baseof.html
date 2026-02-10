@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}КОНТЕКСТ{{ else }}КОНТЕКСТ — {{ .Title }}{{ end }}</title>
   {{ partial "seo.html" . }}
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,6 +45,12 @@
       color: #ccc;
       font-weight: 600;
       font-size: 1.1rem;
+    }
+
+    .site-tagline {
+      color: #555;
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
     }
 
     .site-nav {
@@ -275,6 +281,21 @@
       margin: 0 0.5rem;
     }
 
+    /* Group titles */
+    .group-title {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+
+    .group-title:first-of-type {
+      margin-top: 0;
+    }
+
     /* Section header */
     .section-description {
       color: #777;
@@ -416,7 +437,8 @@
 <body>
   <div class="container{{ if .IsPage }} container--narrow{{ end }}">
     <header class="site-header">
-      <a href="/">context.lat</a>
+      <a href="/">КОНТЕКСТ</a>
+      <p class="site-tagline">Справочник AI-инструментов для вайбкодеров и их ии-агентов</p>
       <nav class="site-nav">
         <a href="/models/"{{ if eq .Section "models" }} class="active"{{ end }}>Модели</a>
         <a href="/tools/"{{ if eq .Section "tools" }} class="active"{{ end }}>Инструменты</a>
@@ -429,7 +451,7 @@
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer">
-      context.lat — для <a href="https://t.me/vibecod3rs">вайбкодеров</a> и их ии-агентов
+      для <a href="https://t.me/vibecod3rs">вайбкодеров</a> и их ии-агентов
     </footer>
   </div>
 </body>

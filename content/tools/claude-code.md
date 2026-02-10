@@ -23,6 +23,8 @@ features:
   - "Hooks для кастомизации"
   - "Multi-file editing"
 weight: 1
+category: "CLI и плагины"
+category_weight: 2
 ---
 
 ## Обзор

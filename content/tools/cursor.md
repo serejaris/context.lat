@@ -23,6 +23,8 @@ features:
   - "Поддержка Claude, GPT, Gemini"
   - "Background Agent"
 weight: 2
+category: "IDE"
+category_weight: 1
 ---
 
 ## Обзор

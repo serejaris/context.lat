@@ -22,6 +22,8 @@ features:
   - "Поддержка Claude и GPT"
   - "Кодовая индексация проекта"
 weight: 3
+category: "IDE"
+category_weight: 1
 ---
 
 ## Обзор

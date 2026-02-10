@@ -22,6 +22,8 @@ features:
   - "Деплой на кастомный домен"
   - "GitHub sync"
 weight: 6
+category: "Веб-платформы"
+category_weight: 3
 ---
 
 ## Обзор

@@ -22,6 +22,8 @@ features:
   - "Full-stack: фронт + бэк"
   - "Интеграция с Supabase, Netlify"
 weight: 5
+category: "Веб-платформы"
+category_weight: 3
 ---
 
 ## Обзор

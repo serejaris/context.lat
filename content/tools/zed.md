@@ -20,6 +20,8 @@ features:
   - "Мультиплеер для парного кодинга"
   - "Кастомные контексты для AI"
 weight: 9
+category: "IDE"
+category_weight: 1
 ---
 
 ## Обзор

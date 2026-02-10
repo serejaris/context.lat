@@ -2,9 +2,21 @@
   {{ partial "breadcrumbs.html" . }}
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p class="section-description">{{ . }}</p>{{ end }}
-  <div class="card-grid">
-    {{ range .Pages.ByWeight }}
-      {{ partial "card.html" . }}
+  {{ $groups := slice
+    (dict "name" "IDE" "weight" 1)
+    (dict "name" "CLI и плагины" "weight" 2)
+    (dict "name" "Веб-платформы" "weight" 3)
+  }}
+  {{ range $groups }}
+    {{ $cat := .name }}
+    {{ $pages := where $.Pages ".Params.category" $cat }}
+    {{ if $pages }}
+      <h2 class="group-title">{{ $cat }}</h2>
+      <div class="card-grid">
+        {{ range $pages.ByWeight }}
+          {{ partial "card.html" . }}
+        {{ end }}
+      </div>
     {{ end }}
-  </div>
+  {{ end }}
 {{ end }}

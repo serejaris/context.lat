@@ -1,9 +1,4 @@
 {{ define "main" }}
-  <div class="home-hero">
-    <h1>context.lat</h1>
-    <p class="home-subtitle">Справочник AI-инструментов для вайбкодеров и их ии-агентов</p>
-  </div>
-
   {{ $latest := index (where .Site.RegularPages "Draft" false).ByDate.Reverse 0 }}
   {{ with $latest }}
   <a href="{{ .RelPermalink }}" class="pulse">
