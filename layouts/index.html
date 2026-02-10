@@ -1,15 +1,33 @@
 {{ define "main" }}
-  {{ range (where .Site.RegularPages "Draft" false).ByLastmod.Reverse | first 3 }}
-    <a href="{{ .RelPermalink }}" class="pulse">
-      <div class="pulse-label">Последнее обновление</div>
-      <div class="pulse-title">{{ .Title }}</div>
-      <div class="pulse-desc">{{ .Description }}</div>
-      <div class="pulse-meta">
-        <span>{{ .Section }}</span>
-        {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
+  {{ $recent := (where .Site.RegularPages "Draft" false).ByLastmod.Reverse | first 3 }}
+  {{ with index $recent 0 }}
+    <a href="{{ .RelPermalink }}" class="featured-card">
+      <div class="featured-label">Свежее</div>
+      <div class="featured-title">{{ .Title }}</div>
+      <div class="featured-desc">{{ .Description }}</div>
+      <div class="featured-meta">
+        {{ with .Params.provider }}<span>{{ . }}</span><span class="sep">·</span>{{ end }}
         <span>{{ .Lastmod.Format "02.01.2006" }}</span>
+        <span class="sep">·</span>
+        <span class="section-tag">{{ .Section }}</span>
       </div>
     </a>
+  {{ end }}
+  {{ if gt (len $recent) 1 }}
+  <div class="small-cards">
+    {{ range after 1 $recent }}
+    <a href="{{ .RelPermalink }}" class="small-card">
+      <div class="small-card-title">{{ .Title }}</div>
+      <div class="small-card-desc">{{ .Description }}</div>
+      <div class="small-card-meta">
+        {{ with .Params.provider }}<span>{{ . }}</span><span class="sep">·</span>{{ end }}
+        <span>{{ .Lastmod.Format "02.01.2006" }}</span>
+        <span class="sep">·</span>
+        <span class="section-tag">{{ .Section }}</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
   {{ end }}
 
   <div class="home-grid">
