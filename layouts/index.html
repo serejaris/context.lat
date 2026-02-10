@@ -1,15 +1,15 @@
 {{ define "main" }}
-  {{ $latest := index (where .Site.RegularPages "Draft" false).ByDate.Reverse 0 }}
-  {{ with $latest }}
-  <a href="{{ .RelPermalink }}" class="pulse">
-    <div class="pulse-label">Последнее обновление</div>
-    <div class="pulse-title">{{ .Title }}</div>
-    <div class="pulse-desc">{{ .Description }}</div>
-    <div class="pulse-meta">
-      <span>{{ .Section }}</span>
-      {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
-    </div>
-  </a>
+  {{ range (where .Site.RegularPages "Draft" false).ByLastmod.Reverse | first 3 }}
+    <a href="{{ .RelPermalink }}" class="pulse">
+      <div class="pulse-label">Последнее обновление</div>
+      <div class="pulse-title">{{ .Title }}</div>
+      <div class="pulse-desc">{{ .Description }}</div>
+      <div class="pulse-meta">
+        <span>{{ .Section }}</span>
+        {{ with .Params.provider }}<span>{{ . }}</span>{{ end }}
+        <span>{{ .Lastmod.Format "02.01.2006" }}</span>
+      </div>
+    </a>
   {{ end }}
 
   <div class="home-grid">

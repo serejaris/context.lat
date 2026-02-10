@@ -1,9 +1,11 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "build": {
     "env": {
       "HUGO_VERSION": "0.154.5"
     }
   },
+  "buildCommand": "(git fetch --unshallow || true) && hugo --gc --minify",
   "framework": "hugo",
   "outputDirectory": "public",
   "cleanUrls": true,

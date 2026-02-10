@@ -3,7 +3,11 @@ languageCode = "ru"
 title = "context.lat — Каталог AI-инструментов"
 
 enableRobotsTXT = true
-enableGitInfo = false
+enableGitInfo = true
+
+[frontmatter]
+  # Priority: manual lastmod in front matter > git commit date > date field.
+  lastmod = ["lastmod", ":git", "date"]
 
 [outputs]
   home = ["HTML"]
