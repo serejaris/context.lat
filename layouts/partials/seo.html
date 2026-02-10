@@ -2,7 +2,8 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ if .IsHome }}КОНТЕКСТ{{ else }}КОНТЕКСТ — {{ .Title }}{{ end }}">
+<meta property="og:site_name" content="КОНТЕКСТ">
+<meta property="og:title" content="{{ if .IsHome }}Гайды для вайбкодинга — модели, skills, MCP{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
@@ -10,7 +11,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ if .IsHome }}КОНТЕКСТ{{ else }}КОНТЕКСТ — {{ .Title }}{{ end }}">
+<meta name="twitter:title" content="{{ if .IsHome }}Гайды для вайбкодинга — модели, skills, MCP{{ else }}{{ .Title }}{{ end }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
 <!-- JSON-LD -->
