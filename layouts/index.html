@@ -1,10 +1,17 @@
 {{ define "main" }}
+  <section class="home-hero">
+    <h1 class="home-hero-title">Каталог AI‑инструментов</h1>
+    <p class="home-hero-desc">Модели, IDE, skills, статьи и MCP — для вайбкодеров и их агентов.</p>
+  </section>
+
   {{ $recent := (where .Site.RegularPages "Draft" false).ByLastmod.Reverse | first 3 }}
+  {{ if $recent }}
+  <p class="home-section-label">Последние обновления</p>
   {{ with index $recent 0 }}
     <a href="{{ .RelPermalink }}" class="featured-card">
-      <div class="featured-label">Свежее</div>
-      <div class="featured-title">{{ .Title }}</div>
-      <div class="featured-desc">{{ .Description }}</div>
+      <span class="featured-label">Свежее</span>
+      <span class="featured-title">{{ .Title }}</span>
+      <span class="featured-desc">{{ .Description }}</span>
       <div class="featured-meta">
         {{ with .Params.provider }}<span>{{ . }}</span><span class="sep">·</span>{{ end }}
         <span>{{ .Lastmod.Format "02.01.2006" }}</span>
@@ -17,8 +24,8 @@
   <div class="small-cards">
     {{ range after 1 $recent }}
     <a href="{{ .RelPermalink }}" class="small-card">
-      <div class="small-card-title">{{ .Title }}</div>
-      <div class="small-card-desc">{{ .Description }}</div>
+      <span class="small-card-title">{{ .Title }}</span>
+      <span class="small-card-desc">{{ .Description }}</span>
       <div class="small-card-meta">
         {{ with .Params.provider }}<span>{{ . }}</span><span class="sep">·</span>{{ end }}
         <span>{{ .Lastmod.Format "02.01.2006" }}</span>
@@ -29,7 +36,9 @@
     {{ end }}
   </div>
   {{ end }}
+  {{ end }}
 
+  <p class="home-section-label">Разделы</p>
   <div class="home-grid">
     {{ $models := where .Site.RegularPages "Section" "models" }}
     <a href="/models/" class="home-card">
