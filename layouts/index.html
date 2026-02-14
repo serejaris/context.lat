@@ -64,6 +64,12 @@
       <div class="home-card-count">{{ len $articles }} {{ cond (ge (len $articles) 5) "статей" (cond (eq (len $articles) 1) "статья" "статьи") }}</div>
       <div class="home-card-desc">Промпт-инжиниринг, управление контекстом, AI pair programming</div>
     </a>
+    {{ $concepts := where .Site.RegularPages "Section" "concepts" }}
+    <a href="/concepts/" class="home-card">
+      <div class="home-card-title">Концепции</div>
+      <div class="home-card-count">{{ len $concepts }} {{ cond (ge (len $concepts) 5) "концепций" (cond (eq (len $concepts) 1) "концепция" "концепции") }}</div>
+      <div class="home-card-desc">Фундаментальные понятия: агенты, RAG, контекстное окно, MCP</div>
+    </a>
     {{ $mcp := where .Site.RegularPages "Section" "mcp" }}
     <a href="/mcp/" class="home-card">
       <div class="home-card-title">MCP</div>

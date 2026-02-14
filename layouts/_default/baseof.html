@@ -456,7 +456,7 @@
 
     .home-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-top: 0.5rem;
     }
@@ -538,6 +538,7 @@
         <a href="/tools/"{{ if eq .Section "tools" }} class="active"{{ end }}>Инструменты</a>
         <a href="/skills/"{{ if eq .Section "skills" }} class="active"{{ end }}>Skills</a>
         <a href="/articles/"{{ if eq .Section "articles" }} class="active"{{ end }}>Статьи</a>
+        <a href="/concepts/"{{ if eq .Section "concepts" }} class="active"{{ end }}>Концепции</a>
         <a href="/mcp/"{{ if eq .Section "mcp" }} class="active"{{ end }}>MCP</a>
       </nav>
     </header>
