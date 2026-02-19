@@ -1,5 +1,5 @@
 ---
-title: "Зачем дизайнеру Claude Code и Superpowers"
+title: "Гайд для дизайнеров по Claude Code и Superpowers"
 description: "Как дизайнеру перейти от макетов к работающему продукту через Claude Code и систему скиллов Superpowers — без хаотичного вайб-кодинга"
 date: 2026-02-19
 category: "Инструменты"
@@ -267,9 +267,9 @@ Vercel деплоит фронтенд-проекты за минуту:
 |--------|---------|
 | **Supabase** | База данных + авторизация |
 | **Google OAuth** | Вход через Google |
-| **Anthropic API** | AI-функции в приложении |
+| **OpenRouter** | AI-функции в приложении |
 
-Supabase — open-source альтернатива Firebase. Бесплатный план покрывает личные проекты. Google OAuth — чтобы пользователи входили через Google, без регистрации с паролем. Anthropic API — если приложению нужен AI (чат, генерация, анализ).
+Supabase — open-source альтернатива Firebase. Бесплатный план покрывает личные проекты. Google OAuth — чтобы пользователи входили через Google, без регистрации с паролем. [OpenRouter](https://openrouter.ai) — единый API к 288+ моделям (Claude, GPT, Gemini, DeepSeek). Один ключ, одна интеграция — переключаешь модель параметром, без переписывания кода. Для простых задач берёшь DeepSeek за $0.30/1M токенов, для сложных — Claude Sonnet за $3/1M.
 
 ### Порядок реализации
 
@@ -285,12 +285,12 @@ API-ключи хранятся в переменных окружения. Фа
 # .env (локально)
 SUPABASE_URL=https://xxx.supabase.co
 SUPABASE_ANON_KEY=eyJ...
-ANTHROPIC_API_KEY=sk-ant-...
+OPENROUTER_API_KEY=sk-or-...
 ```
 
 В продакшене переменные задаются через Vercel Dashboard → Settings → Environment Variables.
 
-Для Anthropic API ключ никогда не должен попадать в клиентский код. Вызовы к API идут через серверную функцию — Supabase Edge Functions или Vercel Serverless Functions.
+Ключ OpenRouter никогда не должен попадать в клиентский код. Вызовы к API идут через серверную функцию — Supabase Edge Functions или Vercel Serverless Functions.
 
 Row Level Security в Supabase — данные пользователя видны только ему. Настраивается на уровне базы, а не кода.
 
@@ -400,7 +400,7 @@ Superpowers помогают и здесь: атомарные коммиты п
 | Claude Code (Free) | $0 — 1-2 промпта, попробовать как работает |
 | Vercel | Бесплатный план для личных проектов |
 | Supabase | Бесплатный план (500 MB хранилища, проект засыпает через 7 дней неактивности) |
-| Anthropic API | Оплата за токены: от $1/млн (Haiku) до $15/млн (Sonnet) |
+| OpenRouter | 288+ моделей, от $0.30/1M (DeepSeek) до $15/1M (Claude Sonnet). Есть бесплатные модели |
 
 Для реальной работы с Superpowers нужен Max за $100/мес — субагенты расходуют контекст быстро. Остальная инфраструктура (Vercel, Supabase) бесплатна для личных проектов.
 
