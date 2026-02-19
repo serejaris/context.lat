@@ -21,6 +21,17 @@
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
 <!-- JSON-LD -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "КОНТЕКСТ",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}"
+}
+</script>
+{{ end }}
 {{ if .IsPage }}
 {{ if eq .Section "models" }}
 <script type="application/ld+json">
@@ -46,7 +57,7 @@
   {{ with .Params.pricing }}{{ with .from }},"offers": { "@type": "Offer", "price": "{{ . }}", "priceCurrency": "USD" }{{ end }}{{ end }}
 }
 </script>
-{{ else if or (eq .Section "skills") (eq .Section "guides") }}
+{{ else if or (eq .Section "skills") (eq .Section "guides") (eq .Section "concepts") }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +66,9 @@
   "description": "{{ .Description }}",
   "url": "{{ .Permalink }}",
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "author": { "@type": "Organization", "name": "КОНТЕКСТ", "url": "{{ .Site.BaseURL }}" },
+  "publisher": { "@type": "Organization", "name": "КОНТЕКСТ", "url": "{{ .Site.BaseURL }}" }
 }
 </script>
 {{ else if eq .Section "mcp" }}
