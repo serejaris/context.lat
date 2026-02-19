@@ -43,7 +43,7 @@
   {{ with .Params.pricing }}{{ with .from }},"offers": { "@type": "Offer", "price": "{{ . }}", "priceCurrency": "USD" }{{ end }}{{ end }}
 }
 </script>
-{{ else if or (eq .Section "skills") (eq .Section "articles") }}
+{{ else if or (eq .Section "skills") (eq .Section "guides") }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

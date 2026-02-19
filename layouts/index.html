@@ -58,10 +58,10 @@
       <div class="home-card-count">{{ len $skills }} {{ cond (ge (len $skills) 5) "скиллов" (cond (eq (len $skills) 1) "скилл" "скилла") }}</div>
       <div class="home-card-desc">Кастомные навыки для Claude Code и других AI-агентов</div>
     </a>
-    {{ $articles := where .Site.RegularPages "Section" "articles" }}
-    <a href="/articles/" class="home-card">
-      <div class="home-card-title">Статьи</div>
-      <div class="home-card-count">{{ len $articles }} {{ cond (ge (len $articles) 5) "статей" (cond (eq (len $articles) 1) "статья" "статьи") }}</div>
+    {{ $guides := where .Site.RegularPages "Section" "guides" }}
+    <a href="/guides/" class="home-card">
+      <div class="home-card-title">Гайды</div>
+      <div class="home-card-count">{{ len $guides }} {{ cond (ge (len $guides) 5) "гайдов" (cond (eq (len $guides) 1) "гайд" "гайда") }}</div>
       <div class="home-card-desc">Промпт-инжиниринг, управление контекстом, AI pair programming</div>
     </a>
     {{ $concepts := where .Site.RegularPages "Section" "concepts" }}
