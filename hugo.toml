@@ -10,7 +10,7 @@ enableGitInfo = true
   lastmod = ["lastmod", ":git", "date"]
 
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "RSS"]
 
 [markup]
   [markup.goldmark]
