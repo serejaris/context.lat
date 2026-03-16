@@ -5,6 +5,7 @@ date: 2026-02-09
 category: "Фреймворк"
 tool: "Claude Code"
 weight: 1
+tags: ["claude-code", "промпты"]
 ---
 
 ## Что это

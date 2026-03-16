@@ -22,6 +22,7 @@ features:
 weight: 9
 category: "IDE"
 category_weight: 1
+tags: ["ide", "промпты"]
 ---
 
 ## Обзор

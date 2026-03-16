@@ -21,6 +21,7 @@ features:
 weight: 11
 category: "Инфраструктура"
 category_weight: 4
+tags: ["веб-платформы", "автоматизация"]
 ---
 
 ## Обзор

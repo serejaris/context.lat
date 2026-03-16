@@ -23,6 +23,7 @@ features:
 weight: 14
 category: "Локальные инструменты"
 category_weight: 5
+tags: ["автоматизация", "промпты"]
 ---
 
 ## Обзор

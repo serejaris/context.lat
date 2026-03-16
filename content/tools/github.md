@@ -24,6 +24,7 @@ features:
 weight: 6
 category: "Инфраструктура"
 category_weight: 4
+tags: ["автоматизация", "агенты"]
 ---
 
 ## Обзор

@@ -21,6 +21,7 @@ features:
 weight: 7
 category: "IDE и редакторы"
 category_weight: 2
+tags: ["ide", "промпты"]
 ---
 
 ## Обзор

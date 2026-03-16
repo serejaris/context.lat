@@ -22,6 +22,7 @@ features:
 weight: 8
 category: "Веб-платформы"
 category_weight: 3
+tags: ["веб-платформы", "промпты"]
 ---
 
 ## Обзор

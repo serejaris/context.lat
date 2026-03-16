@@ -24,6 +24,7 @@ features:
 weight: 4
 category: "CLI и плагины"
 category_weight: 2
+tags: ["openai", "ide"]
 ---
 
 ## Обзор

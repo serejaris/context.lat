@@ -16,6 +16,7 @@ features:
 weight: 13
 category: "AI-ассистенты"
 category_weight: 1
+tags: ["google", "контекст"]
 ---
 
 ## Обзор

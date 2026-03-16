@@ -21,6 +21,7 @@ features:
 weight: 10
 category: "AI-ассистенты"
 category_weight: 1
+tags: ["контекст", "промпты"]
 ---
 
 ## Обзор

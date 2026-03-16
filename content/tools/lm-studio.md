@@ -16,6 +16,7 @@ features:
 weight: 12
 category: "Локальные инструменты"
 category_weight: 5
+tags: ["контекст", "агенты"]
 ---
 
 ## Обзор

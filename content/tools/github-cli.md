@@ -16,6 +16,7 @@ features:
 weight: 9
 category: "CLI и плагины"
 category_weight: 2
+tags: ["автоматизация", "claude-code"]
 ---
 
 ## Обзор
