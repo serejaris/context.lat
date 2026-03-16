@@ -21,6 +21,22 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      padding: 0.5rem 1rem;
+      background: #4A9EFF;
+      color: #0d0d0d;
+      font-size: 0.85rem;
+      border-radius: 0 0 4px 4px;
+      z-index: 100;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -29,6 +45,11 @@
 
     a { color: #4A9EFF; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    :focus-visible {
+      outline: 2px solid #4A9EFF;
+      outline-offset: 2px;
+    }
 
     h1, h2, h3 { color: #ccc; font-weight: 600; }
     h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
@@ -48,7 +69,7 @@
     }
 
     .site-tagline {
-      color: #555;
+      color: #8a8a8a;
       font-size: 0.8rem;
       margin-top: 0.25rem;
     }
@@ -60,7 +81,7 @@
     }
 
     .site-nav a {
-      color: #666;
+      color: #9a9a9a;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -101,13 +122,13 @@
 
     .card p {
       font-size: 0.85rem;
-      color: #777;
+      color: #9a9a9a;
       margin-bottom: 0.75rem;
     }
 
     .card-meta {
       font-size: 0.75rem;
-      color: #555;
+      color: #8a8a8a;
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
@@ -125,7 +146,7 @@
     }
 
     .detail-header .description {
-      color: #777;
+      color: #9a9a9a;
       margin-top: 0.5rem;
     }
 
@@ -141,7 +162,7 @@
     }
 
     .detail-meta dt {
-      color: #555;
+      color: #8a8a8a;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -183,7 +204,7 @@
     }
 
     .pricing-table th {
-      color: #555;
+      color: #8a8a8a;
       font-weight: 400;
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -255,7 +276,7 @@
       display: inline-block;
       margin-top: 1rem;
       font-size: 0.75rem;
-      color: #555;
+      color: #8a8a8a;
     }
 
     .edit-link:hover {
@@ -265,12 +286,12 @@
     /* Breadcrumbs */
     .breadcrumbs {
       font-size: 0.75rem;
-      color: #555;
+      color: #8a8a8a;
       margin-bottom: 1rem;
     }
 
     .breadcrumbs a {
-      color: #555;
+      color: #8a8a8a;
     }
 
     .breadcrumbs a:hover {
@@ -286,7 +307,7 @@
       margin-top: 2rem;
       margin-bottom: 0.5rem;
       font-size: 0.85rem;
-      color: #555;
+      color: #8a8a8a;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 400;
@@ -298,7 +319,7 @@
 
     /* Section header */
     .section-description {
-      color: #777;
+      color: #9a9a9a;
       margin-bottom: 1rem;
       font-size: 0.9rem;
     }
@@ -346,7 +367,7 @@
     .featured-desc {
       display: block;
       font-size: 0.88rem;
-      color: #777;
+      color: #9a9a9a;
       margin-bottom: 0.75rem;
       line-height: 1.5;
     }
@@ -356,7 +377,7 @@
       align-items: center;
       gap: 0.75rem;
       font-size: 0.75rem;
-      color: #555;
+      color: #8a8a8a;
     }
 
     .featured-meta .sep { color: #333; }
@@ -405,7 +426,7 @@
     .small-card-desc {
       display: block;
       font-size: 0.8rem;
-      color: #666;
+      color: #9a9a9a;
       margin-bottom: 0.5rem;
       line-height: 1.45;
     }
@@ -415,7 +436,7 @@
       align-items: center;
       gap: 0.75rem;
       font-size: 0.7rem;
-      color: #555;
+      color: #8a8a8a;
     }
 
     .small-card-meta .sep { color: #333; }
@@ -436,7 +457,7 @@
     }
 
     .home-hero-desc {
-      color: #666;
+      color: #9a9a9a;
       font-size: 0.95rem;
       max-width: 32em;
     }
@@ -497,7 +518,7 @@
 
     .home-card-desc {
       font-size: 0.78rem;
-      color: #555;
+      color: #8a8a8a;
       line-height: 1.45;
     }
 
@@ -507,7 +528,7 @@
       padding-top: 1rem;
       border-top: 1px solid #222;
       font-size: 0.75rem;
-      color: #444;
+      color: #8a8a8a;
     }
 
     /* Tablet */
@@ -530,11 +551,12 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <div class="container">
     <header class="site-header">
       <a href="/">КОНТЕКСТ</a>
       <p class="site-tagline">Справочник AI-инструментов для вайбкодеров и их ии-агентов</p>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Основная навигация">
         <a href="/models/"{{ if eq .Section "models" }} class="active"{{ end }}>Модели</a>
         <a href="/tools/"{{ if eq .Section "tools" }} class="active"{{ end }}>Инструменты</a>
         <a href="/skills/"{{ if eq .Section "skills" }} class="active"{{ end }}>Skills</a>
@@ -543,7 +565,7 @@
         <a href="/mcp/"{{ if eq .Section "mcp" }} class="active"{{ end }}>MCP</a>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer">
