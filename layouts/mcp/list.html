@@ -2,7 +2,7 @@
   {{ partial "breadcrumbs.html" . }}
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p class="section-description">{{ . }}</p>{{ end }}
-  <div class="card-grid">
+  <div class="card-grid" data-pagefind-ignore>
     {{ range .Pages.ByWeight }}
       {{ partial "card.html" . }}
     {{ end }}

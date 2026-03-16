@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <section class="home-hero">
+  <section class="home-hero" data-pagefind-ignore>
     <h1 class="home-hero-title">Каталог AI‑инструментов</h1>
     <p class="home-hero-desc">Модели, IDE, skills, статьи и MCP — для вайбкодеров и их агентов.</p>
   </section>
@@ -39,7 +39,7 @@
   {{ end }}
 
   <p class="home-section-label">Разделы</p>
-  <div class="home-grid">
+  <div class="home-grid" data-pagefind-ignore>
     {{ $models := where .Site.RegularPages "Section" "models" }}
     <a href="/models/" class="home-card">
       <div class="home-card-title">Модели</div>

@@ -5,7 +5,7 @@
       "HUGO_VERSION": "0.154.5"
     }
   },
-  "buildCommand": "(git fetch --unshallow || true) && hugo --gc --minify",
+  "buildCommand": "(git fetch --unshallow || true) && hugo --gc --minify && npx pagefind@latest --site public",
   "framework": "hugo",
   "outputDirectory": "public",
   "cleanUrls": true,
