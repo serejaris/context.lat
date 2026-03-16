@@ -1,0 +1,9 @@
+{{ $pages := .CurrentSection.Pages.ByWeight }}
+{{ $prev := .PrevInSection }}
+{{ $next := .NextInSection }}
+{{ if or $prev $next }}
+<nav class="prev-next">
+  {{ with $prev }}<a href="{{ .RelPermalink }}" class="prev">← {{ .Title }}</a>{{ end }}
+  {{ with $next }}<a href="{{ .RelPermalink }}" class="next">{{ .Title }} →</a>{{ end }}
+</nav>
+{{ end }}

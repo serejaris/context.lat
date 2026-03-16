@@ -1,0 +1,10 @@
+{{- if gt (len (split .RawContent "\n")) 100 -}}
+  {{- if .TableOfContents -}}
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      {{ .TableOfContents }}
+    </details>
+  </nav>
+  {{- end -}}
+{{- end -}}

@@ -1,9 +1,13 @@
 {{ define "main" }}
   {{ partial "breadcrumbs.html" . }}
   <article>
-    <h1>{{ .Title }}</h1>
+    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+    {{ partial "toc.html" . }}
     <div class="content-body">
       {{ .Content }}
     </div>
+
+    {{ partial "related.html" . }}
+    {{ partial "prev-next.html" . }}
   </article>
 {{ end }}

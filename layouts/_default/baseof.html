@@ -543,17 +543,201 @@
       .card-grid { grid-template-columns: 1fr; }
       .home-grid { grid-template-columns: 1fr; }
       .small-cards { grid-template-columns: 1fr; }
-      .site-nav { gap: 1rem; }
+      .site-nav { gap: 1rem; flex-wrap: wrap; }
       h1 { font-size: 1.3rem; }
       .home-hero-title { font-size: 1.4rem; }
       .home-hero { margin-bottom: 2rem; padding-bottom: 1.5rem; }
+      .search-dialog { width: 95%; }
+      .search-modal { padding-top: 10vh; }
     }
+
+    /* Search Modal */
+    .search-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 20vh;
+    }
+    .search-modal[hidden] { display: none; }
+
+    .search-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .search-dialog {
+      position: relative;
+      width: 90%;
+      max-width: 560px;
+      background: #151515;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #222;
+      color: #ccc;
+      font-family: "Fira Code", monospace;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .search-input::placeholder { color: #555; }
+
+    .search-results {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .search-result {
+      display: block;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid #1a1a1a;
+      color: inherit;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .search-result:hover,
+    .search-result:focus {
+      background: #1a1a1a;
+      outline: none;
+      text-decoration: none;
+    }
+    .search-result.active {
+      background: #1a1a1a;
+    }
+
+    .search-result-title {
+      display: block;
+      color: #ccc;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .search-result-excerpt {
+      display: block;
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .search-result-excerpt mark {
+      background: rgba(74, 158, 255, 0.2);
+      color: #4A9EFF;
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+
+    .search-empty {
+      padding: 2rem 1.25rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.85rem;
+    }
+
+    .search-footer {
+      padding: 0.5rem 1.25rem;
+      border-top: 1px solid #222;
+      font-size: 0.7rem;
+      color: #444;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .search-footer kbd {
+      background: #222;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 0.65rem;
+      color: #666;
+    }
+
+    .search-trigger {
+      color: #555;
+      font-size: 0.75rem;
+      border: 1px solid #333;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: auto;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .search-trigger:hover {
+      color: #4A9EFF;
+      border-color: #4A9EFF;
+    }
+
+    /* Table of Contents */
+    .toc {
+      margin: 1.5rem 0;
+      padding: 1rem 1.25rem;
+      border: 1px solid #1e1e1e;
+      border-radius: 6px;
+      background: #0f0f0f;
+      font-size: 0.85rem;
+    }
+
+    .toc summary {
+      color: #555;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc ul ul {
+      padding-left: 1rem;
+    }
+
+    .toc li {
+      padding: 0.2rem 0;
+    }
+
+    .toc a {
+      color: #888;
+    }
+
+    .toc a:hover {
+      color: #4A9EFF;
+    }
+
+    /* Related pages */
+    .related-pages { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #222; }
+    .related-pages h2 { font-size: 0.85rem; color: #555; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 400; margin-bottom: 1rem; }
+    .related-pages ul { list-style: none; }
+    .related-pages li { padding: 0.5rem 0; border-bottom: 1px solid #1a1a1a; }
+    .related-pages li a { color: #ccc; font-size: 0.9rem; }
+    .related-pages li span { display: block; color: #555; font-size: 0.8rem; margin-top: 0.2rem; }
+
+    /* Prev/Next navigation */
+    .prev-next { display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #222; font-size: 0.85rem; }
+    .prev-next .prev { color: #666; }
+    .prev-next .next { color: #666; margin-left: auto; }
+    .prev-next a:hover { color: #4A9EFF; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <div class="container">
-    <header class="site-header">
+    <header class="site-header" data-pagefind-ignore>
       <a href="/">КОНТЕКСТ</a>
       <p class="site-tagline">Справочник AI-инструментов для вайбкодеров и их ии-агентов</p>
       <nav class="site-nav" aria-label="Основная навигация">
@@ -563,14 +747,164 @@
         <a href="/guides/"{{ if eq .Section "guides" }} class="active"{{ end }}>Гайды</a>
         <a href="/concepts/"{{ if eq .Section "concepts" }} class="active"{{ end }}>Концепции</a>
         <a href="/mcp/"{{ if eq .Section "mcp" }} class="active"{{ end }}>MCP</a>
+        <button class="search-trigger" onclick="window.__openSearch()" aria-label="Поиск (Cmd+K)">&#8984;K</button>
       </nav>
     </header>
-    <main id="main-content">
+    <main id="main-content" data-pagefind-body>
       {{ block "main" . }}{{ end }}
     </main>
-    <footer class="site-footer">
+    <footer class="site-footer" data-pagefind-ignore>
       для <a href="https://t.me/vibecod3rs">вайбкодеров</a> и их ии-агентов
     </footer>
   </div>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="search-modal" hidden>
+    <div class="search-backdrop"></div>
+    <div class="search-dialog" role="dialog" aria-label="Поиск по каталогу">
+      <input type="text" class="search-input" placeholder="Поиск по каталогу..." autocomplete="off">
+      <div class="search-results" role="listbox"></div>
+      <div class="search-footer">
+        <kbd>esc</kbd> закрыть
+        <kbd>&uarr;&darr;</kbd> навигация
+        <kbd>&crarr;</kbd> перейти
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var pagefind = null;
+    var modal = document.getElementById('search-modal');
+    var input = modal.querySelector('.search-input');
+    var results = modal.querySelector('.search-results');
+    var activeIdx = -1;
+
+    function open() {
+      modal.hidden = false;
+      input.value = '';
+      results.innerHTML = '';
+      activeIdx = -1;
+      input.focus();
+      if (!pagefind) {
+        import('/pagefind/pagefind.js').then(function(pf) {
+          pagefind = pf;
+          pagefind.init();
+        });
+      }
+    }
+
+    function close() {
+      modal.hidden = true;
+      input.value = '';
+      results.innerHTML = '';
+      activeIdx = -1;
+    }
+
+    window.__openSearch = open;
+
+    function getItems() {
+      return results.querySelectorAll('.search-result');
+    }
+
+    function setActive(idx) {
+      var items = getItems();
+      items.forEach(function(el) { el.classList.remove('active'); });
+      if (idx >= 0 && idx < items.length) {
+        activeIdx = idx;
+        items[idx].classList.add('active');
+        items[idx].scrollIntoView({ block: 'nearest' });
+      } else {
+        activeIdx = -1;
+      }
+    }
+
+    // Cmd+K / Ctrl+K global
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        modal.hidden ? open() : close();
+      }
+      if (e.key === 'Escape' && !modal.hidden) {
+        e.preventDefault();
+        close();
+      }
+    });
+
+    // Backdrop click
+    modal.querySelector('.search-backdrop').addEventListener('click', close);
+
+    // Search on input
+    var debounce;
+    input.addEventListener('input', function() {
+      clearTimeout(debounce);
+      debounce = setTimeout(function() {
+        var query = input.value.trim();
+        if (!pagefind || !query) {
+          results.innerHTML = '';
+          activeIdx = -1;
+          return;
+        }
+        pagefind.search(query).then(function(search) {
+          return Promise.all(search.results.slice(0, 8).map(function(r) { return r.data(); }));
+        }).then(function(data) {
+          if (data.length === 0) {
+            results.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
+            activeIdx = -1;
+            return;
+          }
+          results.innerHTML = data.map(function(d, i) {
+            var title = (d.meta && d.meta.title) ? d.meta.title : d.url;
+            return '<a href="' + d.url + '" class="search-result" role="option" tabindex="-1">' +
+              '<span class="search-result-title">' + title + '</span>' +
+              '<span class="search-result-excerpt">' + (d.excerpt || '') + '</span>' +
+            '</a>';
+          }).join('');
+          setActive(0);
+        });
+      }, 150);
+    });
+
+    // Keyboard navigation in input
+    input.addEventListener('keydown', function(e) {
+      var items = getItems();
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (items.length > 0) {
+          setActive(activeIdx < items.length - 1 ? activeIdx + 1 : 0);
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (items.length > 0) {
+          setActive(activeIdx > 0 ? activeIdx - 1 : items.length - 1);
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (activeIdx >= 0 && items[activeIdx]) {
+          window.location.href = items[activeIdx].href;
+        }
+      }
+    });
+
+    // Click on result
+    results.addEventListener('click', function(e) {
+      var link = e.target.closest('.search-result');
+      if (link) {
+        // default navigation will happen via href
+      }
+    });
+
+    // Hover sets active
+    results.addEventListener('mousemove', function(e) {
+      var link = e.target.closest('.search-result');
+      if (link) {
+        var items = getItems();
+        for (var i = 0; i < items.length; i++) {
+          if (items[i] === link) { setActive(i); break; }
+        }
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

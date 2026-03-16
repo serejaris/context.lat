@@ -1,0 +1,11 @@
+{{ $related := .Site.RegularPages.Related . | first 4 }}
+{{ with $related }}
+<nav class="related-pages">
+  <h2>Связанные страницы</h2>
+  <ul>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ .Description | truncate 80 }}</span></li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
