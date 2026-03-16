@@ -29,18 +29,81 @@ tags: ["автоматизация", "агенты"]
 
 ## Обзор
 
-GitHub — платформа для хостинга кода, управления задачами и автоматизации. Для вайбкодера GitHub — командный центр: Issues хранят контекст между сессиями агента, Projects организуют задачи, Actions автоматизируют деплой.
+GitHub — платформа для хостинга кода, управления задачами и автоматизации. Для вайбкодера GitHub — командный центр: Issues хранят контекст между сессиями агента, Projects организуют задачи, Actions автоматизируют деплой. Не просто «Dropbox для кода» — это persistent storage для [агентского цикла](/concepts/agentic-loop/).
 
-## Для AI-агентов
+## Быстрый старт
 
-GitHub Issues — persistent storage для контекста агента между сессиями. В отличие от текстовых файлов, Issues доступны через API, поддерживают фильтрацию и лейблы. Агент фиксирует прогресс в Issues через `gh` CLI и возвращается к контексту при следующем запуске.
+Агент создаёт репозиторий сам через CLI:
+
+```bash
+gh repo create myapp --private --clone
+cd myapp
+# агент начинает работу
+```
+
+Или из [Claude Code](/tools/claude-code/):
+
+```
+→ "Создай GitHub-репозиторий для проекта и запуши текущий код"
+→ Агент: gh repo create → git init → git add → git push
+```
 
 ## Ключевые связки
 
-- **GitHub + Railway** — пуш в репо -> автодеплой на сервер
-- **GitHub + Claude Code** — агент создаёт репо, пушит код, управляет Issues
-- **GitHub Projects** — канбан-доска, управляемая агентом через GraphQL API
+### GitHub + AI-агент
 
-## Для кого
+[Claude Code](/tools/claude-code/) работает с GitHub через `gh` CLI:
 
-Для всех, кто работает с кодом. Бесплатного тарифа достаточно для большинства индивидуальных проектов.
+```
+→ "Создай issue с описанием задачи"
+→ Агент: gh issue create --title "Добавить авторизацию" --body "..."
+```
+
+Issues — persistent storage контекста. Агент фиксирует прогресс в Issues и возвращается к нему при следующем запуске.
+
+### GitHub + Railway (автодеплой)
+
+```
+git push origin main
+→ Railway обнаруживает push → автодеплой → приложение обновлено
+```
+
+Каждый пуш в main = автоматическое обновление production.
+
+### GitHub + AI-билдеры
+
+Синхронизация между [v0](/tools/v0/), [Replit](/tools/replit/), [Lovable](/tools/lovable/):
+
+1. Создать проект в AI-билдере
+2. Экспортировать в GitHub
+3. Продолжить работу в [Cursor](/tools/cursor/) или [Claude Code](/tools/claude-code/)
+
+### GitHub Projects
+
+Канбан-доска, управляемая агентом:
+
+```
+→ "Создай доску для проекта, добавь задачи из консилиума агентов"
+→ Агент: gh project create → gh project item-add (для каждой задачи)
+```
+
+## В курсе
+
+| Урок | Контекст |
+|------|----------|
+| Урок 2 | Обязательная регистрация. GitHub как «Dropbox для кода» — синхронизация между AI-билдерами |
+| Урок 3 | Агент создаёт репозиторий из Claude Code. Railway привязывается к репо — каждый пуш = автодеплой |
+| Урок 4 | GitHub как командный центр: Issues для persistent storage, Projects для задач консилиума, мастер-репозиторий как индекс проектов |
+
+## Ссылки
+
+- [GitHub](https://github.com)
+- [GitHub CLI](https://cli.github.com)
+- [Тарифы](https://github.com/pricing)
+
+## Связанное
+
+- [GitHub Copilot](/tools/github-copilot/) — AI-агент внутри GitHub
+- [GitHub MCP](/mcp/github/) — MCP-сервер для работы с GitHub из AI
+- [Claude Code](/tools/claude-code/) — работает с GitHub через gh CLI
+- [Личная корпорация](/concepts/personal-corp/) — GitHub как командный центр корпорации
